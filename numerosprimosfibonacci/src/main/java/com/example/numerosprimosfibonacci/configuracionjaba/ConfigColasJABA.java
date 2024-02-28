@@ -28,11 +28,13 @@ public class ConfigColasJABA {
     }
 
     //configuracion de los binding
-    public Binding bindingNumPrimos(Queue cola_primos, DirectExchange exchange){
-        return BindingBuilder.bind(cola_primos).to(exchange).with(ROUTINGA_JABA);
+    @Bean
+    public Binding bindingNumPrimos(Queue colanumprimos, DirectExchange exchange){
+        return BindingBuilder.bind(colanumprimos).to(exchange).with(ROUTINGA_JABA);
     }
-    public Binding bindingNumFibonacci(Queue cola_fibonacci_jaba, DirectExchange exchange){
-        return BindingBuilder.bind(cola_fibonacci_jaba).to(exchange).with(ROUTINGB_JABA);
+    @Bean
+    public Binding bindingNumFibonacci(Queue colafibonacci, DirectExchange exchange){
+        return BindingBuilder.bind(colafibonacci).to(exchange).with(ROUTINGB_JABA);
     }
 
     @Bean
