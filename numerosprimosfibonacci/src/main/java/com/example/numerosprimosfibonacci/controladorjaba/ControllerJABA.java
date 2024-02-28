@@ -13,5 +13,5 @@ public class ControllerJABA {
     private RabbitTemplate rabbitTemplate;
     @Autowired
     private DirectExchange exchange;
-    
+
 }
