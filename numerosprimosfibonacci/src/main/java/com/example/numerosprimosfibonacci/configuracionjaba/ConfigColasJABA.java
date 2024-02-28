@@ -20,5 +20,12 @@ public class ConfigColasJABA {
     public Queue colanumprimos(){return new Queue(cola_primos,false);}
     @Bean
     public Queue colafibonacci(){return new Queue(cola_fibonacci_jaba, false);}
+
+    //configurar redireccionamiento
+    @Bean
+    public DirectExchange exchange(){
+        return new DirectExchange("exchange-numeros");
+    }
     
+
 }
