@@ -8,5 +8,5 @@ import lombok.ToString;
 public class NumeroJABA {
     private Long id_numero_jaba;
     private int valornumero_jaba;
-    
+
 }
