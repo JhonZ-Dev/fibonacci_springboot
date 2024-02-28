@@ -35,5 +35,16 @@ public class ConfigColasJABA {
         return BindingBuilder.bind(cola_fibonacci_jaba).to(exchange).with(ROUTINGB_JABA);
     }
 
+    @Bean
+    public Jackson2JsonMessageConverter jsonMessageConverter() {
+        return new Jackson2JsonMessageConverter();
+    }
+    @Bean
+    RabbitTemplate rabbitTemplate(ConnectionFactory factory){
+        RabbitTemplate rabbitTemplate = new RabbitTemplate(factory);
+        rabbitTemplate.setMessageConverter(jsonMessageConverter());
+        return rabbitTemplate;
+    }
+
 
 }
