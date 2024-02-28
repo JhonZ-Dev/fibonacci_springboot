@@ -26,6 +26,14 @@ public class ConfigColasJABA {
     public DirectExchange exchange(){
         return new DirectExchange("exchange-numeros");
     }
-    
+
+    //configuracion de los binding
+    public Binding bindingNumPrimos(Queue cola_primos, DirectExchange exchange){
+        return BindingBuilder.bind(cola_primos).to(exchange).with(ROUTINGA_JABA);
+    }
+    public Binding bindingNumFibonacci(Queue cola_fibonacci_jaba, DirectExchange exchange){
+        return BindingBuilder.bind(cola_fibonacci_jaba).to(exchange).with(ROUTINGB_JABA);
+    }
+
 
 }
